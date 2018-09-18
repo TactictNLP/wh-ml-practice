@@ -1,8 +1,12 @@
+"""
+Modified from https://github.com/floodsung/a2c_cartpole_pytorch
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 import math
 import random
@@ -123,7 +127,7 @@ def main():
         target_values = qs
         values = value_network(states_var)
         criterion = nn.MSELoss()
-        value_network_loss = criterion(values,target_values)
+        value_network_loss = criterion(values, target_values)
         value_network_loss.backward()
         torch.nn.utils.clip_grad_norm(value_network.parameters(),0.5)
         value_network_optim.step()
