@@ -1,4 +1,6 @@
-Tensroflow练习
+Machine Learning练习
+大多数是tensorflow写的
+主要参考morvan代码
 
 maintained by bill
 ======
