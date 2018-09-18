@@ -1,3 +1,7 @@
+"""
+ref: https://www.jianshu.com/p/25c09ae3d206
+"""
+
 import numpy as np
 import tensorflow as tf
 import gym
@@ -49,8 +53,8 @@ for i_episode in range(MAX_EPISODE):
 
         track_r.append(r)
 
-        td_error = critic.learn(s,r,s_)
-        actor.learn(s,a,td_error)
+        td_error = critic.learn(s,r,s_)  # 从critic那里拿到td_error
+        actor.learn(s,a,td_error)  # 发给actor去使用
 
         s = s_
         t += 1
