@@ -26,7 +26,8 @@ RL = PolicyGradient(
     n_actions=n_actions,
     n_features = n_features,
     learning_rate = 0.02,
-    reward_decay = 0.99
+    reward_decay = 0.99,
+    output_graph=True,
 )
 
 for i_episode in range(3000):
